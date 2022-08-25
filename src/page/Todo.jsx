@@ -19,7 +19,6 @@ const Todo = () => {
   return (
     <Outer>
     <h1>ToDo</h1>
-    <div onClick={()=>{navigate("/restful")}}>RESTFULAPI</div>
     <UpperBox>
     <InputBox
     type="text"
@@ -40,6 +39,7 @@ const Outer =styled.div`
   align-items: center;
   border: 1px red solid;
   width: 90%;
+  margin: auto;
 `
 const UpperBox = styled.div`
    display: flex;

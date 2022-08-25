@@ -19,7 +19,7 @@ const List = ({list}) => {
           <>
           <Modimodal>
             <Container>
-            <input type="text" defaultValue={list?.todo}/>
+            <input type="text" defaultValue={list?.todo[list.id]}/>
              <Buttonwrap>
             <div onClick={()=>{
                  setMod(false)
