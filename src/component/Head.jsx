@@ -9,9 +9,9 @@ const Head = () => {
     <HeaderSc>
     <h1>최서현</h1>
     <Inner>
-      <Btn onClick={()=>{navigate('/')}}>1.React 개념</Btn>
-      <Btn onClick={()=>{navigate('/todo')}}>2.Todo</Btn>
-      <Btn onClick={()=>{navigate('/restapi')}}>3.Rest API</Btn>
+      <Btn onClick={()=>{navigate('/')}}>React</Btn>
+      <Btn onClick={()=>{navigate('/todo')}}>Todo</Btn>
+      <Btn onClick={()=>{navigate('/restapi')}}>Rest API</Btn>
     </Inner>
     </HeaderSc>
   )
@@ -30,7 +30,7 @@ const Inner =styled.div`
    display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 70%;
 `
 const Btn = styled.div`
   width: 100px;

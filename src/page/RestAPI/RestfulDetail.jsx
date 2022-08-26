@@ -56,7 +56,7 @@ const RestfulDetail = () => {
       <img src={user.avatar} alt="userphoto"/>
       <Outer2>
         {modify?
-        <>
+        <div>
           <Inner>
           <h4>🙋‍♂️{user.first_name} {user.last_name}</h4>
           ✉<input type="text" defaultValue={email} ref={emailRef}/>
@@ -64,21 +64,19 @@ const RestfulDetail = () => {
          <Button onClick={modUser}>
           <div>완료</div>
           </Button>
-         </>
+         </div>
          : 
          <Inner>
-          <div>
-          <h4>🙋‍♂️ {user.first_name} {user.last_name}</h4>
-            <h5>✉ {email}</h5>
-          </div>
-           <Button>
-            <div onClick={()=>{setModify(true)}}>수정</div>
-            <div onClick={delUser}>삭제</div>
-          </Button>
+            <div>
+            <h4>🙋‍♂️ {user.first_name} {user.last_name}</h4>
+              <h5>✉ {email}</h5>
+            </div>
+            <Button>
+              <div onClick={()=>{setModify(true)}}>수정</div>
+              <div onClick={delUser}>삭제</div>
+            </Button>
           </Inner>
         }
-       
-       
       </Outer2>
     </Outer>
   )
@@ -96,6 +94,13 @@ const Outer =styled.div`
   img{
     border-radius: 10px;
   }
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    margin: auto;
+    img{
+    border-radius: 10px;
+  }
+  }
 `
 const Outer2 =styled.div`
   display: flex;
@@ -103,6 +108,7 @@ const Outer2 =styled.div`
   width: 60%;
   margin: 10px auto;
   position: relative;
+
 `
 
 const Inner = styled.div`
@@ -127,4 +133,8 @@ const Button = styled.div`
         color: white;
       }
     }
+    @media screen and (max-width: 768px){
+      bottom: -50px;
+      right: -50px;
+  }
 `

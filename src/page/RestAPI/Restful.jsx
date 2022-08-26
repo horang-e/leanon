@@ -23,17 +23,17 @@ const Restful = () => {
 
   return (
     <Wrap>
-    <h3>회원목록</h3>
+     <h3>회원목록</h3>
     {user.map((user,idx)=>{
       return(
         <Outer 
         key={idx}
         onClick={()=>{navigate(`/restful/${user.id}`)}}>
         <img src={user.avatar} alt="userphoto"/>
-        <Inner>
-          <h4>🙋‍♂️{user.first_name} {user.last_name}</h4>
-          <h5>✉{user.email}</h5>
-        </Inner>
+          <Inner>
+            <h3>🙋‍♂️{user.first_name} {user.last_name}</h3>
+            <h5>✉{user.email}</h5>
+          </Inner>
         </Outer>
       )
     })}
@@ -60,8 +60,15 @@ const Outer =styled.div`
   background-color: black;
   color: white;
  }
+   @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
 `
 
 const Inner = styled.div`
   margin: auto;
+  width: 100%;
+  @media screen and (max-width: 768px){
+    text-align: center;
+  }
 `
