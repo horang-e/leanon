@@ -9,9 +9,9 @@ const Head = () => {
     <HeaderSc>
     <h1>최서현</h1>
     <Inner>
-    <Btn onClick={()=>{navigate('/')}}>1.React 개념</Btn>
-    <Btn onClick={()=>{navigate('/todo')}}>2.Todo</Btn>
-    <Btn onClick={()=>{navigate('/restful')}}>3.Rest API</Btn>
+      <Btn onClick={()=>{navigate('/')}}>1.React 개념</Btn>
+      <Btn onClick={()=>{navigate('/todo')}}>2.Todo</Btn>
+      <Btn onClick={()=>{navigate('/restapi')}}>3.Rest API</Btn>
     </Inner>
     </HeaderSc>
   )

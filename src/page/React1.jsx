@@ -19,7 +19,6 @@ export default React1
 const Outer =styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px red solid;
   width: 90%;
   margin: auto;
 `

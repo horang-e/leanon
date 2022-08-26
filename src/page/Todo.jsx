@@ -3,19 +3,20 @@ import styled from 'styled-components'
 import List from '../component/list'
 import { useDispatch, useSelector } from 'react-redux'
 import { createTodo } from '../redux/modules/todo'
-import { useNavigate } from 'react-router-dom'
 
 const Todo = () => {
   const inputRef = useRef(null)
   const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const lists = useSelector((state) => state.todoReducer.list).reverse();
-  console.log(lists.reverse())
+
+  //STORE에서 데이터를 뽑아옵니다.
+  const lists = useSelector((state) => state.todoReducer.list);
+
+  // TODO리스트를 dispatch를 사용해서 리덕스로 보냅니다.
   const addTodo = ()=>{
-    console.log(inputRef.current.value)
     dispatch(createTodo(inputRef.current.value))
     inputRef.current.value=""
   }
+
   return (
     <Outer>
     <h1>ToDo</h1>
@@ -27,6 +28,7 @@ const Todo = () => {
     />
     <AddButton onClick={addTodo}>ADD</AddButton>
     </UpperBox>
+    {/* props값으로 store에서 가져온 값을 넘깁니다 */}
     <List list={lists}/>
     </Outer>
   )
@@ -37,7 +39,7 @@ const Outer =styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px red solid;
+
   width: 90%;
   margin: auto;
 `
