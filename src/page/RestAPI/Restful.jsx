@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const Restful = () => {
-  
+
   const navigate = useNavigate()
   //데이터 비동기로 가져오기 전 map돌릴시에 생길 오류 방지를 위해 빈배열로 기본값 줌
   const [user,setUser] = useState([])
@@ -26,7 +26,9 @@ const Restful = () => {
     <h3>회원목록</h3>
     {user.map((user,idx)=>{
       return(
-        <Outer onClick={()=>{navigate(`/restful/${user.id}`)}}>
+        <Outer 
+        key={idx}
+        onClick={()=>{navigate(`/restful/${user.id}`)}}>
         <img src={user.avatar} alt="userphoto"/>
         <Inner>
           <h4>🙋‍♂️{user.first_name} {user.last_name}</h4>
